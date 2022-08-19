@@ -17,12 +17,12 @@ body {
 }
 
 header {
-    max-width: 2056px;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    background-image: url(../images/hero-img.png);
+    background: url(../images/hero-img.png) center no-repeat;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 880px;
 
     .top_navbar {
         display: flex;
@@ -30,7 +30,7 @@ header {
         align-items: center;
 
         .logo {
-            margin: 22px 0 auto 100px;
+            margin: 22px 0 auto 125px;
         }
 
         nav {
@@ -50,7 +50,6 @@ header {
     section {
         display: flex;
         flex-direction: column;
-        height: 880px;
 
         h1 {
             font-weight: 700;
@@ -73,7 +72,6 @@ header {
             text-transform: uppercase;
             color: $white;
             text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            text-align: center;
         }
 
         button {
@@ -94,15 +92,16 @@ header {
                 cursor: pointer;
             }
         }
+    }
 
-        .arrow_down {
-            width: 38px;
-            margin: 0 auto;
-        }
+    .arrow_down {
+        width: 38px;
+        margin: 0 auto 35px auto;
     }
 }
 
 main {
+    max-width: 1440px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -112,8 +111,7 @@ main {
     section {
         .container_about {
             display: flex;
-            margin: 127px auto;
-            width: 1040px;
+            margin: 127px 200px;
 
             .container_about--text {
                 h2 {
@@ -152,7 +150,7 @@ main {
         background-image: url(../images/searcher-bg.png);
         background-repeat: no-repeat;
         background-size: contain;
-        width: 1440px;
+        width: 100%;
         height: 307px;
 
         .container_search {
@@ -219,12 +217,10 @@ main {
         }
     }
 
-
-
     section {
 
         .container_specials {
-            margin: 115px auto 116px auto;
+            margin: 115px auto 50px auto;
 
             h2 {
                 font-weight: 700;
@@ -242,7 +238,7 @@ main {
             grid-template-rows: repeat(2, 1fr);
             grid-column-gap: 27px;
             grid-row-gap: 26px;
-            margin-bottom: 116px;
+            margin-bottom: 70px;
 
             .recipe {
                 width: 395px;
@@ -252,7 +248,7 @@ main {
                 border-radius: 15px;
 
                 .recipe_frame {
-                    padding: 41px 28px 21px 30px;
+                    padding: 28px 28px 21px 30px;
 
                     h3 {
                         font-weight: 700;
@@ -277,11 +273,10 @@ main {
                     display: flex;
 
                     button {
-                        width: 174.42px;
-                        height: 51.3px;
-                        background: $yellow;
+                        width: 176px;
+                        height: 51px;
                         border-radius: 30px;
-                        border: none;
+                        background-color: $white;
                         color: $black;
                         font-weight: 700;
                         font-size: 15px;
@@ -289,11 +284,38 @@ main {
                         text-align: center;
                         text-transform: uppercase;
                         margin: 22px auto 0 auto;
+                        border: 2px solid $black;
 
                         &:hover {
                             cursor: pointer;
+                            background-color: $yellow;
+                            transition: 2s ease;
                         }
                     }
+                }
+            }
+        }
+
+        .btn_show_more_recipes {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto 140px auto;
+
+            button {
+                width: 260px;
+                height: 55px;
+                border-radius: 30px;
+                text-align: center;
+                background: $yellow;
+                border: none;
+                color: $black;
+                font-weight: 700;
+                font-size: 15px;
+                line-height: 20px;
+                text-transform: uppercase;
+
+                &:hover {
+                    cursor: pointer;
                 }
             }
         }
@@ -301,19 +323,17 @@ main {
 }
 
 footer {
-    max-width: 2056px;
     width: 100%;
     background-color: $blue_dark;
-    height: 107px;
 
     .bottom_navbar {
+        padding: 21px 0;
 
         nav {
             display: flex;
             justify-content: space-between;
             width: 459px;
-            height: 25px;
-            margin: 41px auto;
+            margin: 0px auto;
 
             a {
                 color: $white;
@@ -325,6 +345,406 @@ footer {
                 text-transform: uppercase;
                 text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
                 display: flex;
+            }
+        }
+    }
+}
+
+
+//MOBILE
+
+@media screen and (max-width: 767px) {
+    header {
+        width: 100%;
+
+        .top_navbar {
+            .logo {
+                margin: 15px;
+            }
+
+            nav {
+                display: none;
+                width: 370px;
+                margin: 31px 100px auto 0;
+
+                a {
+                    gap: 45px;
+                }
+            }
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            height: 880px;
+
+            h1 {
+                font-size: 50px;
+                line-height: 75px;
+                margin: 244px auto 15px auto;
+            }
+
+            span {
+                font-weight: 700;
+                font-size: 30px;
+                line-height: 40px;
+                text-align: center;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                color: $white;
+                text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+                text-align: center;
+            }
+
+            button {
+                width: 246px;
+                height: 55px;
+                background-color: $yellow;
+                border: none;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 21px;
+                text-align: center;
+                text-transform: uppercase;
+                color: $black;
+                border-radius: 52px;
+                margin: 60px auto 263px auto;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .arrow_down {
+                width: 38px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    main {
+        width: 100%;
+
+        section {
+            .container_about {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 70px 0;
+                width: 100%;
+
+                .container_about--text {
+                    h2 {
+                        font-size: 32px;
+                        line-height: 42px;
+                        padding-bottom: 10px;
+                        text-align: center;
+                    }
+
+                    p {
+                        padding: 20px;
+                        text-align: center;
+                        font-size: 16px;
+                        line-height: 30px;
+                        letter-spacing: -0.128571px;
+                    }
+
+                    img {
+                        padding: 10px 0 60px 0;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .container_about--image {
+                    img {
+                        width: 100%;
+
+                    }
+                }
+            }
+        }
+
+        .searcher {
+            background-image: url(../images/searcher-bg.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: unset;
+
+            .container_search {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: column;
+
+                .container_search--text {
+                    h2 {
+                        margin: 8px 205px 0 20px;
+                        font-weight: 700;
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
+                }
+
+                .container_search--bar {
+                    form {
+                        margin: 25px auto;
+
+                        #search {
+                            width: 300px;
+                            height: 50px;
+                            background: $white;
+                            border-radius: 43px;
+                            border: 2px solid $grey_medium;
+                            padding-left: 35px;
+                        }
+
+                        button {
+                            position: absolute;
+                            width: 105px;
+                            height: 50px;
+                            left: 195px;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        section {
+
+            .container_specials {
+                margin: 60px auto;
+
+                h2 {
+                    font-weight: 700;
+                    font-size: 32px;
+                    line-height: 42px;
+                    text-transform: uppercase;
+                    text-align: center;
+                    color: $blue_dark;
+                }
+            }
+
+            .container_specials--grid {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                grid-row-gap: 40px;
+                margin-bottom: 116px;
+
+                .recipe {
+                    max-width: 300px;
+                    width: 100%;
+                    height: 100%;
+                    background: $white;
+                    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+                    border-radius: 15px;
+
+
+                    img {
+                        width: 100%;
+                    }
+
+                    .recipe_frame {
+                        padding: 41px 28px 21px 30px;
+
+                        h3 {
+                            font-weight: 700;
+                            font-size: 20px;
+                            line-height: 26px;
+                            letter-spacing: -0.285714px;
+                            color: $black;
+                            padding-bottom: 20px;
+                        }
+
+                        p {
+                            font-weight: 400;
+                            font-size: 13px;
+                            line-height: 25px;
+                            text-align: justify;
+                            letter-spacing: -0.128571px;
+                            color: $grey_medium;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        width: 100%;
+        background-color: $blue_dark;
+
+        .bottom_navbar {
+
+            nav {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                padding: 0px auto;
+            }
+        }
+    }
+}
+
+//TABLET AND MORE
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+
+    header {
+        .top_navbar {
+            .logo {
+                margin: 22px 0 auto 40px;
+            }
+
+            nav {
+                margin: 31px 40px auto 0;
+            }
+        }
+    }
+
+    main {
+        width: 100%;
+
+        section {
+            .container_about {
+                display: flex;
+                margin: 126px 40px;
+
+                .container_about--text img {
+                    padding-top: 30px;
+                    float: left;
+                }
+            }
+        }
+
+        .searcher {
+            background-image: url(../images/searcher-bg.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            .container_search {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: column;
+
+                .container_search--text {
+                    h2 {
+                        margin: 9px 310px 0 20px;
+                        font-weight: 700;
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
+                }
+
+                .container_search--bar {
+                    form {
+                        margin: 25px auto;
+
+                        #search {
+                            width: 300px;
+                            height: 50px;
+                            background: $white;
+                            border-radius: 43px;
+                            border: 2px solid $grey_medium;
+                            padding-left: 35px;
+
+                            ::placeholder {
+                                font-weight: 700;
+                                font-size: 14px;
+                                line-height: 18px;
+                                text-transform: lowercase;
+                                color: $grey_light;
+                                padding-left: 35px;
+                            }
+                        }
+
+                        button {
+                            position: absolute;
+                            width: 105px;
+                            height: 50px;
+                            left: 195px;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        section {
+
+            .container_specials--grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+
+                .recipe {
+                    width: 395px;
+                    height: 615.58px;
+                    background: $white;
+                    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+                    border-radius: 15px;
+
+                    .recipe_frame {
+                        padding: 28px 28px 21px 30px;
+
+                        h3 {
+                            font-weight: 700;
+                            font-size: 20px;
+                            line-height: 26px;
+                            letter-spacing: -0.285714px;
+                            color: $black;
+                            padding-bottom: 20px;
+                        }
+
+                        p {
+                            font-weight: 400;
+                            font-size: 13px;
+                            line-height: 25px;
+                            text-align: justify;
+                            letter-spacing: -0.128571px;
+                            color: $grey_medium;
+                        }
+                    }
+
+                    .btn_show_recipe {
+                        display: flex;
+
+                        button {
+                            width: 176px;
+                            height: 51px;
+                            border-radius: 30px;
+                            background-color: $white;
+                            color: $black;
+                            font-weight: 700;
+                            font-size: 15px;
+                            line-height: 20px;
+                            text-align: center;
+                            text-transform: uppercase;
+                            margin: 22px auto 0 auto;
+                            border: 2px solid $black;
+
+                            &:hover {
+                                cursor: pointer;
+                                background-color: $yellow;
+                                transition: 2s ease;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
