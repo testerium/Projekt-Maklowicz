@@ -1,0 +1,331 @@
+@use './variables.scss' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Sintony', sans-serif;
+    font-style: normal;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    max-width: 2056px;
+    width: 100%;
+    background-image: url(../images/hero-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 880px;
+
+    .top_navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            margin: 22px 0 auto 100px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            width: 484px;
+            margin: 31px 100px auto 0;
+
+            a {
+                color: $white;
+                gap: 45px;
+                text-decoration: none;
+            }
+        }
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        height: 880px;
+
+        h1 {
+            font-weight: 700;
+            font-size: 64px;
+            line-height: 83px;
+            text-align: center;
+            letter-spacing: -0.107143px;
+            text-transform: uppercase;
+            color: $white;
+            text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+            margin: 244px auto 15px auto;
+        }
+
+        span {
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 40px;
+            text-align: center;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: $white;
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        button {
+            width: 246px;
+            height: 55px;
+            background-color: $yellow;
+            border: none;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 21px;
+            text-align: center;
+            text-transform: uppercase;
+            color: $black;
+            border-radius: 52px;
+            margin: 60px auto 263px auto;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .arrow_down {
+            width: 38px;
+            margin: 0 auto;
+        }
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    section {
+        .container_about {
+            display: flex;
+            margin: 127px auto;
+            width: 1040px;
+
+            .container_about--text {
+                h2 {
+                    font-weight: 700;
+                    font-size: 32px;
+                    line-height: 42px;
+                    text-transform: uppercase;
+                    color: $blue_dark;
+                    padding-bottom: 32px;
+                }
+
+                p {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 30px;
+                    letter-spacing: -0.128571px;
+                    text-transform: capitalize;
+                    color: $grey_medium;
+                    padding-bottom: 64px;
+                    padding-right: 66px;
+                }
+
+                img {
+                    padding-top: 64px;
+                    float: right;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    .searcher {
+        background-image: url(../images/searcher-bg.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 1440px;
+        height: 307px;
+
+        .container_search {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .container_search--text {
+                h2 {
+                    margin: 109px auto 113px 200px;
+                    font-weight: 700;
+                    font-size: 32px;
+                    line-height: 42px;
+                    text-transform: uppercase;
+                    color: $blue_dark;
+                }
+            }
+
+            .container_search--bar {
+                form {
+                    position: relative;
+                    margin-right: 200px;
+
+                    #search {
+                        width: 600px;
+                        height: 55px;
+                        background: $white;
+                        border-radius: 43px;
+                        border: none;
+                        padding-left: 35px;
+
+                        ::placeholder {
+                            font-weight: 700;
+                            font-size: 14px;
+                            line-height: 18px;
+                            text-transform: lowercase;
+                            color: $grey_light;
+                            padding-left: 35px;
+                        }
+                    }
+
+                    button {
+                        position: absolute;
+                        width: 186px;
+                        height: 55px;
+                        left: 414px;
+                        top: 0px;
+                        background: $yellow;
+                        border-radius: 30px;
+                        border: none;
+                        font-weight: 700;
+                        font-size: 15px;
+                        line-height: 20px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        color: $black;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    section {
+
+        .container_specials {
+            margin: 115px auto 116px auto;
+
+            h2 {
+                font-weight: 700;
+                font-size: 32px;
+                line-height: 42px;
+                text-transform: uppercase;
+                text-align: center;
+                color: $blue_dark;
+            }
+        }
+
+        .container_specials--grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 27px;
+            grid-row-gap: 26px;
+            margin-bottom: 116px;
+
+            .recipe {
+                width: 395px;
+                height: 615.58px;
+                background: $white;
+                box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+                border-radius: 15px;
+
+                .recipe_frame {
+                    padding: 41px 28px 21px 30px;
+
+                    h3 {
+                        font-weight: 700;
+                        font-size: 20px;
+                        line-height: 26px;
+                        letter-spacing: -0.285714px;
+                        color: $black;
+                        padding-bottom: 20px;
+                    }
+
+                    p {
+                        font-weight: 400;
+                        font-size: 13px;
+                        line-height: 25px;
+                        text-align: justify;
+                        letter-spacing: -0.128571px;
+                        color: $grey_medium;
+                    }
+                }
+
+                .btn_show_recipe {
+                    display: flex;
+
+                    button {
+                        width: 174.42px;
+                        height: 51.3px;
+                        background: $yellow;
+                        border-radius: 30px;
+                        border: none;
+                        color: $black;
+                        font-weight: 700;
+                        font-size: 15px;
+                        line-height: 20px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        margin: 22px auto 0 auto;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    max-width: 2056px;
+    width: 100%;
+    background-color: $blue_dark;
+    height: 107px;
+
+    .bottom_navbar {
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            width: 459px;
+            height: 25px;
+            margin: 41px auto;
+
+            a {
+                color: $white;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 13px;
+                line-height: 25px;
+                letter-spacing: -0.107143px;
+                text-transform: uppercase;
+                text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
+                display: flex;
+            }
+        }
+    }
+}
