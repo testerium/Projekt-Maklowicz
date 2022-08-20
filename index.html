@@ -12,15 +12,21 @@
 <body>
     <header>
         <div class="top_navbar">
-            <img class="logo" src="./images/LOGO.png" alt="logo">
+            <img class="logo" src="./images/LOGO.svg" alt="logo">
             <div>
-                <nav>
-                    <a href="/home/">HOME</a>
-                    <a href="https://www.figma.com/file/bMDoxXXggEOWiKdf4makUp/MAKIETY?node-id=133%3A6"
-                        target="_blank">O PROJEKCIE</a>
-                    <a href="/recipes/">PRZEPISY</a>
-                    <a href="/map/">MAPA PRZEPISÓW</a>
+                <nav id="sidebar_menu">
+                    <div id="nav_menu">
+                        <a class="nav_link" href="/home/">HOME</a>
+                        <a class="nav_link"
+                            href="https://www.figma.com/file/bMDoxXXggEOWiKdf4makUp/MAKIETY?node-id=133%3A6"
+                            target="_blank">O PROJEKCIE</a>
+                        <a class="nav_link" href="/recipes/">PRZEPISY</a>
+                        <a class="nav_link" href="/map/">MAPA PRZEPISÓW</a>
+                    </div>
                 </nav>
+                <div id="hamburger_menu">
+                    <img src="./images/icon-hamburger.svg" alt="">
+                </div>
             </div>
         </div>
         <section>
@@ -169,6 +175,7 @@
             </nav>
         </div>
     </footer>
+    <script src="./js/app.js"></script>
 </body>
 
 </html>

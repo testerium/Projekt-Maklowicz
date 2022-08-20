@@ -33,9 +33,18 @@ header {
             margin: 22px 0 auto 125px;
         }
 
-        nav {
+        #hamburger_menu {
+            display: none;
+        }
+
+        #sidebar_menu {
+            visibility: visible;
+        }
+
+        #nav_menu {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             width: 484px;
             margin: 31px 100px auto 0;
 
@@ -366,13 +375,37 @@ footer {
                 margin: 15px;
             }
 
-            nav {
-                display: none;
-                width: 370px;
-                margin: 31px 100px auto 0;
+            #hamburger_menu {
+                display: block;
+                margin-right: 15px;
 
-                a {
-                    gap: 45px;
+                &.active {
+                    opacity: 0.5;
+                }
+            }
+
+            #nav_menu {
+                width: 300px;
+                height: 285px;
+                border-radius: 30px;
+                position: fixed;
+                left: 100%;
+                top: 82px;
+                gap: 0;
+                flex-direction: column;
+                background-color: #FFFCF8;
+                text-align: center;
+                transition: 0.3s;
+                justify-content: space-evenly;
+
+                &.active {
+                    left: 0%;
+                    right: 0%;
+                    margin: 0 auto;
+
+                    a {
+                        color: $black;
+                    }
                 }
             }
         }
@@ -380,12 +413,12 @@ footer {
         section {
             display: flex;
             flex-direction: column;
-            height: 880px;
+            height: 645px;
 
             h1 {
                 font-size: 50px;
                 line-height: 75px;
-                margin: 244px auto 15px auto;
+                margin: 150px auto 40px auto;
             }
 
             span {
@@ -412,7 +445,7 @@ footer {
                 text-transform: uppercase;
                 color: $black;
                 border-radius: 52px;
-                margin: 60px auto 263px auto;
+                margin: 40px auto;
 
                 &:hover {
                     cursor: pointer;
@@ -464,7 +497,7 @@ footer {
 
                 .container_about--image {
                     img {
-                        width: 100%;
+                        width: 250px;
 
                     }
                 }
@@ -550,6 +583,7 @@ footer {
                     text-transform: uppercase;
                     text-align: center;
                     color: $blue_dark;
+                    margin: 0 10px;
                 }
             }
 
@@ -625,10 +659,6 @@ footer {
         .top_navbar {
             .logo {
                 margin: 22px 0 auto 40px;
-            }
-
-            nav {
-                margin: 31px 40px auto 0;
             }
         }
     }
