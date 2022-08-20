@@ -146,6 +146,10 @@ main {
         }
     }
 
+    .searcher_mobile {
+        display: none;
+    }
+
     .searcher {
         background-image: url(../images/searcher-bg.png);
         background-repeat: no-repeat;
@@ -468,21 +472,28 @@ footer {
         }
 
         .searcher {
-            background-image: url(../images/searcher-bg.png);
+            display: none;
+        }
+
+        .searcher_mobile {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            background: linear-gradient(273.38deg, rgba(0, 0, 0, 0) 3.6%, rgba(0, 34, 59, 0.35) 71.14%), url(../images/searcher_mobile-bg.jpg);
             background-repeat: no-repeat;
-            background-size: contain;
-            height: unset;
+            background-size: cover;
+            width: 100%;
 
             .container_search {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-between;
-                flex-direction: column;
 
                 .container_search--text {
                     h2 {
-                        margin: 8px 205px 0 20px;
+                        margin: 15px auto 0 auto;
+                        text-transform: uppercase;
                         font-weight: 700;
                         font-size: 16px;
                         line-height: 20px;
@@ -492,6 +503,7 @@ footer {
                 .container_search--bar {
                     form {
                         margin: 25px auto;
+                        position: relative;
 
                         #search {
                             width: 300px;
@@ -507,6 +519,15 @@ footer {
                             width: 105px;
                             height: 50px;
                             left: 195px;
+                            background-color: $yellow;
+                            border-radius: 30px;
+                            border: none;
+                            font-weight: 700;
+                            font-size: 15px;
+                            line-height: 20px;
+                            text-align: center;
+                            text-transform: uppercase;
+                            color: #000000;
 
                             &:hover {
                                 cursor: pointer;
@@ -630,20 +651,20 @@ footer {
         .searcher {
             background-image: url(../images/searcher-bg.png);
             background-repeat: no-repeat;
-            background-size: contain;
+            background-size: unset;
 
             .container_search {
                 display: flex;
-                align-items: center;
-                justify-content: space-between;
-                flex-direction: column;
+                justify-content: space-evenly;
+                flex-direction: row;
+                margin: 98px;
 
                 .container_search--text {
                     h2 {
-                        margin: 9px 310px 0 20px;
+                        margin: 0 auto;
                         font-weight: 700;
-                        font-size: 16px;
-                        line-height: 20px;
+                        font-size: 30px;
+                        line-height: 40px;
                     }
                 }
 
