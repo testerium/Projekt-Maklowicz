@@ -36,10 +36,7 @@ header {
         #hamburger_menu,
         #close_menu {
             display: none;
-        }
-
-        #sidebar_menu {
-            visibility: visible;
+            color: $white;
         }
 
         #nav_menu {
@@ -86,8 +83,6 @@ header {
 
         button {
             position: relative;
-            width: 246px;
-            height: 55px;
             background-color: $yellow;
             border: none;
             font-weight: 700;
@@ -99,6 +94,7 @@ header {
             border-radius: 52px;
             margin: 60px auto 263px auto;
             overflow: hidden;
+            padding: 16px 30px;
 
             &:hover {
                 cursor: pointer;
@@ -347,8 +343,6 @@ main {
 
             button {
                 position: relative;
-                width: 260px;
-                height: 55px;
                 border-radius: 30px;
                 text-align: center;
                 background: $yellow;
@@ -359,6 +353,7 @@ main {
                 line-height: 20px;
                 text-transform: uppercase;
                 overflow: hidden;
+                padding: 16px 20px;
 
                 &:hover {
                     cursor: pointer;
@@ -428,21 +423,22 @@ footer {
             }
 
             #hamburger_menu {
+                display: none;
                 position: relative;
-                display: block;
+                margin-right: 20px;
+
+                &.active {
+                    display: block;
+                }
+            }
+
+            #close_menu {
+                display: none;
+                position: relative;
                 margin-right: 15px;
 
                 &.active {
-                    opacity: 0;
-
-                    #close_menu {
-                        position: absolute;
-                        display: block;
-                        top: 15px;
-                        right: 15px;
-                        filter: invert(1);
-                        opacity: 1;
-                    }
+                    display: block;
                 }
             }
 
@@ -506,7 +502,7 @@ footer {
             .container_about {
                 flex-wrap: wrap;
                 justify-content: center;
-                margin: 100px 0;
+                margin: 100px auto 220px auto;
                 width: 100%;
 
                 .container_about--text {
@@ -549,6 +545,7 @@ footer {
             background-repeat: no-repeat;
             background-size: cover;
             width: 100%;
+            margin-bottom: 50px;
 
             .container_search {
                 display: flex;
@@ -559,9 +556,11 @@ footer {
                     position: relative;
 
                     h2 {
-                        font-size: 16px;
+                        font-weight: 700;
+                        font-size: 32px;
+                        line-height: 42px;
                         position: absolute;
-                        top: -35px;
+                        top: -120px;
                         width: 300px;
                         text-align: center;
                         text-transform: uppercase;
@@ -675,8 +674,6 @@ footer {
     }
 
     footer {
-        width: 100%;
-        background-color: $blue_dark;
 
         .bottom_navbar {
 
@@ -687,12 +684,16 @@ footer {
                 justify-content: center;
                 width: 100%;
                 padding: 0px auto;
+
+                a {
+                    margin: 3px 0;
+                }
             }
         }
     }
 }
 
-//TABLET AND MORE
+//TABLET
 
 @media screen and (min-width: 768px) and (max-width: 1439px) {
 
@@ -746,19 +747,6 @@ footer {
                         #search {
                             width: 300px;
                             height: 50px;
-                            background: $white;
-                            border-radius: 43px;
-                            border: 2px solid $grey_medium;
-                            padding-left: 35px;
-
-                            ::placeholder {
-                                font-weight: 700;
-                                font-size: 14px;
-                                line-height: 18px;
-                                text-transform: lowercase;
-                                color: $grey_light;
-                                padding-left: 35px;
-                            }
                         }
 
                         button {
@@ -782,61 +770,6 @@ footer {
             .container_specials--grid {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-
-                .recipe {
-                    width: 395px;
-                    height: 615.58px;
-                    background: $white;
-                    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
-                    border-radius: 15px;
-
-                    .recipe_frame {
-                        padding: 28px 28px 21px 30px;
-
-                        h3 {
-                            font-weight: 700;
-                            font-size: 20px;
-                            line-height: 26px;
-                            letter-spacing: -0.285714px;
-                            color: $black;
-                            padding-bottom: 20px;
-                        }
-
-                        p {
-                            font-weight: 400;
-                            font-size: 13px;
-                            line-height: 25px;
-                            text-align: justify;
-                            letter-spacing: -0.128571px;
-                            color: $grey_medium;
-                        }
-                    }
-
-                    .btn_show_recipe {
-                        display: flex;
-
-                        button {
-                            width: 176px;
-                            height: 51px;
-                            border-radius: 30px;
-                            background-color: $white;
-                            color: $black;
-                            font-weight: 700;
-                            font-size: 15px;
-                            line-height: 20px;
-                            text-align: center;
-                            text-transform: uppercase;
-                            margin: 22px auto 0 auto;
-                            border: 2px solid $black;
-
-                            &:hover {
-                                cursor: pointer;
-                                background-color: $yellow;
-                                transition: 2s ease;
-                            }
-                        }
-                    }
-                }
             }
         }
     }

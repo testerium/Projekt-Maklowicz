@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
     <title>Projekt Makłowicz</title>
+    <script src="https://kit.fontawesome.com/68225af142.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -14,21 +15,18 @@
         <div class="top_navbar">
             <img class="logo" src="./images/LOGO.svg" alt="logo">
             <div>
-                <nav id="sidebar_menu">
-                    <div id="nav_menu">
-                        <a class="nav_link" href="/home/" target="_blank">HOME</a>
-                        <a class="nav_link" href="/about" target="_blank">O PROJEKCIE</a>
-                        <a class="nav_link" href="/recipes/" target="_blank">PRZEPISY</a>
-                        <a class="nav_link" href="/map/" target="_blank">MAPA PRZEPISÓW</a>
-                    </div>
+                <nav id="nav_menu">
+                    <a class="nav_link" href="/home/">HOME</a>
+                    <a class="nav_link" href="/about">O PROJEKCIE</a>
+                    <a class="nav_link" href="/recipes/">PRZEPISY</a>
+                    <a class="nav_link" href="/map/">MAPA PRZEPISÓW</a>
                 </nav>
-                <div id="hamburger_menu">
-                    <img src="./images/icon-hamburger.svg" alt="">
+                <div id="hamburger_menu" class="active">
+                    <i class="fa-solid fa-bars fa-xl"></i>
                 </div>
                 <div id="close_menu">
-                    <img src="./images/icon-close.svg" alt="">
+                    <i class="fa-solid fa-xmark fa-xl"></i>
                 </div>
-
             </div>
         </div>
         <section>
@@ -63,8 +61,8 @@
                             the
                             release of Letraset sheets containing Lorem Ipsum.
                         </p>
-                        <span class="read_more">czytaj
-                            więcej...</span>
+                        <a class="read_more" href="/about">czytaj
+                            więcej...</a>
                     </div>
                 </div>
                 <div class="container_about--image">
