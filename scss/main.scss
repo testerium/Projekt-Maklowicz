@@ -33,7 +33,8 @@ header {
             margin: 22px 0 auto 125px;
         }
 
-        #hamburger_menu {
+        #hamburger_menu,
+        #close_menu {
             display: none;
         }
 
@@ -84,6 +85,7 @@ header {
         }
 
         button {
+            position: relative;
             width: 246px;
             height: 55px;
             background-color: $yellow;
@@ -96,16 +98,37 @@ header {
             color: $black;
             border-radius: 52px;
             margin: 60px auto 263px auto;
+            overflow: hidden;
 
             &:hover {
                 cursor: pointer;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: -50px;
+                top: 0;
+                width: 50px;
+                height: 100%;
+                background-color: $white;
+                opacity: 0.4;
+                border: none;
+                border-radius: 52px;
+                transform: rotate(20deg);
+                transition: transform 0.3s;
+            }
+
+            &:hover:after {
+                transform: translateX(346px) rotate(20deg);
             }
         }
     }
 
     .arrow_down {
-        width: 38px;
+        width: 60px;
         margin: 0 auto 35px auto;
+        filter: invert(1);
     }
 }
 
@@ -139,13 +162,19 @@ main {
                     letter-spacing: -0.128571px;
                     text-transform: capitalize;
                     color: $grey_medium;
-                    padding-bottom: 64px;
+                    padding-bottom: 10px;
                     padding-right: 66px;
                 }
 
-                img {
-                    padding-top: 64px;
+                .read_more {
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 21px;
                     float: right;
+                    text-transform: lowercase;
+                    color: $black;
+                    text-decoration: underline solid 9px $yellow;
+                    padding-right: 66px;
 
                     &:hover {
                         cursor: pointer;
@@ -224,6 +253,8 @@ main {
                         &:hover {
                             cursor: pointer;
                         }
+
+
                     }
                 }
             }
@@ -302,7 +333,7 @@ main {
                         &:hover {
                             cursor: pointer;
                             background-color: $yellow;
-                            transition: 2s ease;
+                            transition: 0.5s ease;
                         }
                     }
                 }
@@ -315,6 +346,7 @@ main {
             margin: 0 auto 140px auto;
 
             button {
+                position: relative;
                 width: 260px;
                 height: 55px;
                 border-radius: 30px;
@@ -326,9 +358,29 @@ main {
                 font-size: 15px;
                 line-height: 20px;
                 text-transform: uppercase;
+                overflow: hidden;
 
                 &:hover {
                     cursor: pointer;
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: -50px;
+                    top: 0;
+                    width: 50px;
+                    height: 100%;
+                    background-color: $white;
+                    opacity: 0.4;
+                    border: none;
+                    border-radius: 52px;
+                    transform: rotate(20deg);
+                    transition: transform 0.3s;
+                }
+
+                &:hover:after {
+                    transform: translateX(346px) rotate(20deg);
                 }
             }
         }
@@ -376,18 +428,27 @@ footer {
             }
 
             #hamburger_menu {
+                position: relative;
                 display: block;
                 margin-right: 15px;
 
                 &.active {
-                    opacity: 0.5;
+                    opacity: 0;
+
+                    #close_menu {
+                        position: absolute;
+                        display: block;
+                        top: 15px;
+                        right: 15px;
+                        filter: invert(1);
+                        opacity: 1;
+                    }
                 }
             }
 
             #nav_menu {
-                width: 300px;
+                width: unset;
                 height: 285px;
-                border-radius: 30px;
                 position: fixed;
                 left: 100%;
                 top: 82px;
@@ -395,13 +456,24 @@ footer {
                 flex-direction: column;
                 background-color: #FFFCF8;
                 text-align: center;
-                transition: 0.3s;
                 justify-content: space-evenly;
+                animation: fadeIn 1s;
+
+                @keyframes fadeIn {
+                    0% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+                }
 
                 &.active {
                     left: 0%;
                     right: 0%;
                     margin: 0 auto;
+                    z-index: 9999;
 
                     a {
                         color: $black;
@@ -411,8 +483,6 @@ footer {
         }
 
         section {
-            display: flex;
-            flex-direction: column;
             height: 645px;
 
             h1 {
@@ -421,41 +491,11 @@ footer {
                 margin: 150px auto 40px auto;
             }
 
-            span {
-                font-weight: 700;
-                font-size: 30px;
-                line-height: 40px;
-                text-align: center;
-                letter-spacing: 5px;
-                text-transform: uppercase;
-                color: $white;
-                text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-                text-align: center;
-            }
-
             button {
-                width: 246px;
-                height: 55px;
-                background-color: $yellow;
-                border: none;
-                font-weight: 700;
-                font-size: 16px;
-                line-height: 21px;
-                text-align: center;
-                text-transform: uppercase;
-                color: $black;
-                border-radius: 52px;
+                position: relative;
                 margin: 40px auto;
-
-                &:hover {
-                    cursor: pointer;
-                }
             }
 
-            .arrow_down {
-                width: 38px;
-                margin: 0 auto;
-            }
         }
     }
 
@@ -464,16 +504,13 @@ footer {
 
         section {
             .container_about {
-                display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                margin: 70px 0;
+                margin: 100px 0;
                 width: 100%;
 
                 .container_about--text {
                     h2 {
-                        font-size: 32px;
-                        line-height: 42px;
                         padding-bottom: 10px;
                         text-align: center;
                     }
@@ -481,24 +518,20 @@ footer {
                     p {
                         padding: 20px;
                         text-align: center;
-                        font-size: 16px;
-                        line-height: 30px;
-                        letter-spacing: -0.128571px;
                     }
 
-                    img {
-                        padding: 10px 0 60px 0;
-
-                        &:hover {
-                            cursor: pointer;
-                        }
+                    .read_more {
+                        display: flex;
+                        justify-content: center;
+                        float: unset;
+                        padding-right: 0;
                     }
                 }
 
                 .container_about--image {
                     img {
                         width: 250px;
-
+                        margin-top: 80px;
                     }
                 }
             }
@@ -519,17 +552,19 @@ footer {
 
             .container_search {
                 display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: space-between;
+                flex-wrap: wrap;
+                justify-content: center;
 
                 .container_search--text {
+                    position: relative;
+
                     h2 {
-                        margin: 15px auto 0 auto;
-                        text-transform: uppercase;
-                        font-weight: 700;
                         font-size: 16px;
-                        line-height: 20px;
+                        position: absolute;
+                        top: -35px;
+                        width: 300px;
+                        text-align: center;
+                        text-transform: uppercase;
                     }
                 }
 
@@ -543,7 +578,7 @@ footer {
                             height: 50px;
                             background: $white;
                             border-radius: 43px;
-                            border: 2px solid $grey_medium;
+                            border: none;
                             padding-left: 35px;
                         }
 
@@ -592,7 +627,7 @@ footer {
                 flex-direction: column;
                 align-items: center;
                 grid-row-gap: 40px;
-                margin-bottom: 116px;
+                margin-bottom: 50px;
 
                 .recipe {
                     max-width: 300px;
@@ -629,6 +664,12 @@ footer {
                         }
                     }
                 }
+            }
+
+            .btn_show_more_recipes {
+                display: flex;
+                justify-content: center;
+                margin: 0 auto 100px auto;
             }
         }
     }
